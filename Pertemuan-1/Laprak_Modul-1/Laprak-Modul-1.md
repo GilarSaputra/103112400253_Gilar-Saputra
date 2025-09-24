@@ -12,17 +12,21 @@ Beberapa konsep dasar C++ yang relevan dalam praktikum struktur data adalah:
     5. Operator Matematika -> operasi perhitungan, oeprasi perbandingan, logika matematika, dll [2]
 
 
-### A. ...<br/>
+### A. Materi Praktikum <br/>
 ...
-#### 1. ...
-#### 2. ...
-#### 3. ...
+### 1. Input & Output
+### 2. Operasi Matematika 
+### 3. Prulangan For
+### 4. Prulangan While- do while
+### 5. Percabangan If-else if- else
+### 6. Struct
 
-### B. ...<br/>
+### B. Tugas Laprak <br/>
 ...
-#### 1. ...
-#### 2. ...
-#### 3. ...
+#### 1. Soal Unguided 1
+#### 2. Soal Unguided 2
+#### 3. Soal Unguided 3
+
 
 ## Guided 
 
@@ -229,7 +233,8 @@ int main() {
 ```
 ### Output Unguided 1 :
 
-![Screenshot Output Unguided 1_1](https://github.com/GilarSaputra/103112400253/blob/main/Pertemuan-1/Laprak_Modul-1/assets/Output-soal1.png)
+![Screenshot Output Unguided 1](https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-1/Laprak_Modul-1/assets/Output-soal1.png)
+
 
 Program di atas, program berfungsi untuk meminta 2 inputan bertipe data float kepada user, yang dimana 2 inputan tadi digunakan untuk melakukan operasi matematika penjumlahan, pengurangan, perkalian, dan pembagian oleh program. 
 
@@ -289,7 +294,7 @@ int main() {
 ```
 ### Output Unguided 2 :
 
-![Screenshot Output Unguided 1_1](https://github.com/GilarSaputra/103112400253/blob/main/Pertemuan-1/Laprak_Modul-1/assets/Output-soal2.png)
+![Screenshot Output Unguided 1](https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-1/Laprak_Modul-1/assets/Output-soal2.png)
 
 Program di atas, program berfungsi untuk meminta inputan kepada user. dimana program memiliki array yang akan digunakan untuk menyimpan data string sesaui dengan index yg sudah dicatta. Program akan melihat kondisi dai inputan user. Lalu program akan mengeluarkan output berupa string.
 
@@ -339,7 +344,7 @@ int main() {
 ```
 ### Output Unguided 3 :
 
-![Screenshot Output Unguided 1_1](https://github.com/GilarSaputra/103112400253/blob/main/Pertemuan-1/Laprak_Modul-1/assets/Output-soal3.png)
+![Screenshot Output Unguided 1](https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-1/Laprak_Modul-1/assets/Output-soal3.png)
 
 Program di atas, program berfungsi untuk meminta inputan user untuk menentukan baris segitiga piramida terbalik, lalu program akan melakukan sebuah perulangan untuk baris dan juga index angka perulangannya hingga membentuk output segitiga piramid terblik yang di akhiri dengan *
 
