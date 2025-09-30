@@ -2,29 +2,21 @@
 <p align="center">Gilar Saputra - 103112400253</p>
 
 ## Dasar Teori
-Seiring dengan kemajuan teknologi dan informasi saat ini sudah semakin banyak tersedia ragam media pembelajaran. Berbagai ragam media pembelajaran tersebut bisa diterapkan pada matakuliah di program studi informatika baik pada matakuliah teori maupun praktikum [1]. Pada praktikum struktur data kali ini bahas yang digunakan adalah bahasa c++. C++ bukan sekadar bahasa pemrograman, tapi jendela untuk melihat bagaimana data benar-benar bekerja di dalam memori. Praktikum ini akan membekali Anda dengan kunci dasar agar bisa membuka pintu ke dunia struktur data yang lebih kompleks. Bahasa C++ merupakan bahasa pemrograman tingkat menengah yang dikembangkan oleh Bjarne Stroustrup pada awal 1980-an sebagai pengembangan dari bahasa C dengan menambahkan paradigma object-oriented programming (OOP). C++ banyak digunakan dalam bidang system programming, game development, hingga pengembangan perangkat lunak performa tinggi.
-
-Beberapa konsep dasar C++ yang relevan dalam praktikum struktur data adalah:
-    1. Tipe Data dan Variabel -> digunakan untuk menyimpan nilai.
-    2. Input Output -> untuk menerima masukan user dan mengeluarkan hasil
-    3. Kontrol Alur -> meliputi conditional statement (if) dan perulangan (for, while, do-while).
-    4. Array -> struktur data statis untuk penyimpanan sekuensial.
-    5. Operator Matematika -> operasi perhitungan, oeprasi perbandingan, logika matematika, dll [2]
+Dalam bahasa pemrograman C++, pemahaman tentang array, pointer, reference, dan fungsi merupakan hal fundamental yang harus dikuasai dalam praktik [1]. Array berfungsi untuk menyimpan sejumlah data yang memiliki tipe serupa secara urut di dalam memori, sehingga mempermudah pengelolaan data dalam jumlah besar. Pointer berfungsi sebagai variabel yang memiliki alamat memori, yang memungkinkan akses dan manipulasi data secara langsung serta mempermudah pengelolaan array dan parameter di dalam fungsi. Reference hadir sebagai nama lain untuk variabel lain, yang mempermudah proses pass by reference tanpa perlu menggunakan dereferensi, menjadikannya lebih mudah dibandingkan pointer. Di sisi lain, fungsi berfungsi sebagai blok kode yang dapat dipanggil kembali, membantu membagi program menjadi bagian-bagian modular yang lebih teratur, serta mendukung parameter baik dengan pass by value maupun pass by reference. Dengan memahami hubungan antar konsep ini, mahasiswa dapat menciptakan program yang lebih efisien, terorganisir, dan mudah untuk dipelihara[2].
 
 
 ### A. Materi Praktikum <br/>
 ...
-### 1. Input & Output
-### 2. Operasi Matematika 
-### 3. Prulangan For
-### 4. Prulangan While- do while
-### 5. Percabangan If-else if- else
-### 6. Struct
+### 1. Array 1 dimensi
+### 2. Array 2 dimensi 
+### 3. Pointer
+### 4. Reference
+### 5. Fungsi
 
 ### B. Tugas Laprak <br/>
 ...
 #### 1. Soal Unguided 1
-#### 2. Soal Unguided 2
+#### 2. Soal Unguided 2 (a, b)
 #### 3. Soal Unguided 3
 
 
@@ -296,134 +288,175 @@ int main(){
 ```
 ### Output Unguided 1 :
 
-![Screenshot Output Unguided 1](https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-1/Laprak_Modul-1/assets/Output-soal2.png)
+![Screenshot Output Unguided 1](https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-2/Laprak-modul-2/assets/output-1.png)
 
 
-Program di atas, program berfungsi untuk meminta 2 inputan bertipe data float kepada user, yang dimana 2 inputan tadi digunakan untuk melakukan operasi matematika penjumlahan, pengurangan, perkalian, dan pembagian oleh program. 
+Kode di atas adalah kode yang berfungsi untuk melakukan sebuah operasi matematika berupa penjumlahan, pengurangan dan perkalian dari matriks 3x3 menggunakan array 2 dimensi.
 
 ### 2. soal unguided 2
-Buatlah program  yang menerima masukan angka dan mengeluarkan output nilai angka tersebut dalam bentuk tulisan. Angka yang akan di input-kan user adalah bilangan bulat positif mulai dari 0 s.d 100
-    contoh : 79 : tujuh puluh sembilan
+Berdasarkan guided pointer dan reference sebelumnya, buatlah keduanya dapat menukar nilai dari 3 variabel
 
+### a. soal unguided 2 menggunakan pointer
 ```C++
 #include <iostream>
 using namespace std;
 
+void tukar(int *x, int *y, int *z) {
+    int temp;
+    temp = *x;
+    *x = *y;
+    *y = *z;
+    *z = temp;
+}
+
 int main() {
-    string satuan[] = {
-        "", " satu", " dua", " tiga", " empat", " lima", " enam", " tujuh", " delapan", " sembilan"
-    };
-    string belasan[] = {
-        "sepuluh", "sebelas", "dua belas", "tiga belas", "empat belas", "lima belas", "enam belas",
-        "tujuh belas", "delapan belas", "sembilan belas"
-    };
-    string puluhan[] = {
-        "", "", "dua puluh", "tiga puluh", "empat puluh", "lima puluh", "enam puluh", "tujuh puluh", 
-        "delapan puluh", "sembilan puluh"
-    };
+    int a = 20, b = 30, c = 50;
 
-    int bil;
+    cout << "Sebelum swapping: a=" << a << ", b=" << b << ", c=" << c << endl;
 
-    cout << "Masukan angka : ";
-    cin >> bil;
+    tukar(&a, &b, &c);
 
-    string hasil = "";
+    cout << "Setelah sapping: a=" << a << ", b=" << b << ", c=" << c << endl;
 
-    if (bil == 0) {
-        hasil = "nol";
-    };
-    if (bil == 100){ 
-        hasil = "seratus";
-    }
-
-
-    if (bil < 10) {
-        hasil = satuan[bil];
-    }
-    else if ( bil < 20 ) {
-        hasil = belasan[bil-10];
-    }
-    else {
-        hasil = puluhan[bil/10];
-        if (bil % 10 != 0) 
-        {
-            hasil += "" + satuan[bil%10];
-        }    
-    }
-
-    cout << bil << " : " << hasil << endl;
     return 0;
 }
+
 ```
-### Output Unguided 2 :
+### Output Unguided 2.a :
 
-![Screenshot Output Unguided 1](https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-1/Laprak_Modul-1/assets/Output-soal2.png)
+![Screenshot Output Unguided 1](https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-2/Laprak-modul-2/assets/output-2_1.png)
 
-Program di atas, program berfungsi untuk meminta inputan kepada user. dimana program memiliki array yang akan digunakan untuk menyimpan data string sesaui dengan index yg sudah dicatta. Program akan melihat kondisi dai inputan user. Lalu program akan mengeluarkan output berupa string.
+### b. soal unguided 2 menggunakan reference
+```C++
+#include <iostream>
+using namespace std;
+
+void tukar(int *x, int *y, int *z) {
+    int temp;
+    temp = *x;
+    *x = *y;
+    *y = *z;
+    *z = temp;
+}
+
+int main() {
+    int a = 20, b = 30, c = 50;
+
+    cout << "Sebelum swapping: a=" << a << ", b=" << b << ", c=" << c << endl;
+
+    tukar(&a, &b, &c);
+
+    cout << "Setelah sapping: a=" << a << ", b=" << b << ", c=" << c << endl;
+
+    return 0;
+}
+
+```
+### Output Unguided 2.b :
+
+![Screenshot Output Unguided 1](https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-2/Laprak-modul-2/assets/output-2_2.png)
+
+Program di atas, program berfungsi untuk melakukan pertukaran nilai 3 variable dimana variable temp sebagai variable penyimpan nilai sementara menggunakan pointer dan juga reference.
 
 ### 3. soal unguided 3
-Buatlah program  yang dapat memberikan input dan output sbb.
-    input : 3
-    output :
-        3 2 1 * 1 2 3
-          2 1 * 1 2
-            1 * 1
-              *
+Diketahui sebuah array 1 dimensi sebagai berikut : arrA = {11, 8, 5, 7, 12, 26, 3, 54, 33, 55}
+Buatlah program yang dapat mencari nilai minimum, maksimum, dan rata – rata dari array tersebut! Gunakan function cariMinimum() untuk mencari nilai minimum dan function cariMaksimum() untuk mencari nilai maksimum, serta gunakan prosedur hitungRataRata() untuk menghitung nilai rata – rata! Buat program menggunakan menu switch-case seperti berikut ini :
+--- Menu Program Array ---
+1. Tampilkan isi array
+2. cari nilai maksimum
+3. cari nilai minimum
+4. Hitung nilai rata - rata
 
 ```C++
 #include <iostream>
 using namespace std;
 
-int main() {
-    int n;    cout << "Input : ";
-    cin >> n;
-
-    cout << "Output : " << endl;
-
-    for (int i = n; i >= 1 ; i--) {
-        for (int spasi = 0; spasi < (n - i); spasi++) {
-            cout << "  "; 
+int cariMaksimum(int arrA[], int ukuran) {
+    int MAX = arrA[0];
+    for (int i = 1; i < ukuran; i++) {
+        if (arrA[i] > MAX) {
+            MAX = arrA[i];
         }
-        for (int sisiKiri = i; sisiKiri >= 1; sisiKiri--){            
-            cout << sisiKiri << " ";
-        }
-
-        cout << " * ";
-
-        for (int sisiKanan = 1; sisiKanan <= i; sisiKanan++){
-            cout << sisiKanan << " ";
-        }
-        
-        cout << endl;  
     }
-    
-    for (int lastSpasi = 0; lastSpasi < n; lastSpasi++) {
-        cout << "  ";
-    }
-    cout << " * " << endl;
-    return 0;
-    
+    return MAX;
 }
+
+int cariMinimum(int arrA[], int ukuran) {
+    int MIN = arrA[0];
+    for (int i = 1; i < ukuran; i++) {
+        if (arrA[i] < MIN) {
+            MIN = arrA[i];
+        }
+    }
+    return MIN;
+}
+
+void hitungRataRata(int arr[], int ukuran) {
+    int sum = 0;
+    for (int i = 0; i < ukuran; i++) {
+        sum += arr[i];
+    }
+    double rata = (double)sum / ukuran;
+    cout << "Nilai rata-rata = " << rata << endl;
+}
+
+void tampilkanArray(int arr[], int ukuran) {
+    cout << "Isi array: ";
+    for (int i = 0; i < ukuran; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+}
+
+int main() {
+    const int ukuran = 10;
+    int arrA[ukuran] = {11, 8, 5, 7, 12, 26, 3, 54, 33, 55};
+    int input;
+
+        cout << "\n--- Menu Program Array ---" << endl;
+        cout << "1. Tampilkan isi array" << endl;
+        cout << "2. Cari nilai maksimum" << endl;
+        cout << "3. Cari nilai minimum" << endl;
+        cout << "4. Hitung nilai rata-rata" << endl;
+        cout << "Pilih menu: ";
+        cin >> input;
+
+        switch (input) {
+            case 1:
+                tampilkanArray(arrA, ukuran);
+                break;
+            case 2:
+                cout << "Nilai maksimum = " << cariMaksimum(arrA, ukuran) << endl;
+                break;
+            case 3:
+                cout << "Nilai minimum = " << cariMinimum(arrA, ukuran) << endl;
+                break;
+            case 4:
+                hitungRataRata(arrA, ukuran);
+                break;
+            default:
+                cout << "Pilihan tidak valid!" << endl;
+        }
+    return 0;
+}
+
 ```
 ### Output Unguided 3 :
 
-![Screenshot Output Unguided 1](https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-1/Laprak_Modul-1/assets/Output-soal3.png)
+![Screenshot Output Unguided 1](https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-2/Laprak-modul-2/assets/output-3.png)
 
-Program di atas, program berfungsi untuk meminta inputan user untuk menentukan baris segitiga piramida terbalik, lalu program akan melakukan sebuah perulangan untuk baris dan juga index angka perulangannya hingga membentuk output segitiga piramid terblik yang di akhiri dengan *
+Program di atas, program berfungsi untuk meminta inputan user untuk menentukan menu mana yang akan dipilih sesuai yang di tampilkan di terminal dimana user dapat melihat "Isi array", "nilai minimum", "nilai maksimum", "nilai rata-rata"
 
 ## Kesimpulan
-Pada praktikum Modul 1 ini, mahasiswa diperkenalkan dengan VS code dan konsep dasar bahasa C++. Melalui serangkaian percobaan baik guided maupun unguided, mahasiswa mampu:
-    1. Memahami dasar input-output menggunakan cin dan cout.
-    2. Menerapkan operator matematika dalam operasi penjumlahan, pengurangan, perkalian, pembagian, dan modulus.
-    3. Menggunakan struktur kontrol seperti perulangan (for, while, do-while) dan percabangan (if-else).
-    4. Menerapkan struct sebagai bentuk dasar pemrograman terstruktur untuk menyimpan data majemuk.
-    5. Menyelesaikan soal unguided yang melatih pemahaman logika pemrograman, manipulasi array, serta pola perulangan.
+Pada praktikum Modul 2 ini, mahasiswa mempelajari materi tentang array (array 1 dimensi dan 2 dimensi), pointer dan reference, serta fungsi dan void. 
 
-Dengan dasar ini, mahasiswa diharapkan mampu membangun fondasi yang kuat untuk memahami implementasi struktur data pada praktikum berikutnya, karena C++ memberikan kontrol penuh terhadap memori sekaligus fleksibilitas dalam pemrograman prosedural maupun berorientasi objek.
+Array : struktur data yang menyimpan banyak elemen bertipe sama secara berurutan di memori, diakses dengan indeks.
+Pointer : variabel yang menyimpan alamat memori; berguna untuk manipulasi data, array, dan fungsi.
+Reference : alias dari variabel lain, memudahkan pass by reference tanpa perlu dereferensi seperti pointer.
+Fungsi : blok kode yang dapat dipanggil ulang, mendukung pass by value atau pass by reference, serta bisa bersifat rekursif untuk memecah masalah. [1]
 
 ## Referensi
-[1] Saputri, N. A. O., Hannah, M. P., & Suroyo, H. (2017, October). EFEKTIFITAS PENGGUNAAN WEB-BASED-LEARNING PADA MATAKULIAH PRAKTIKUM STRUKTUR DATA DENGAN BAHASA C++. In Prosiding Seminar Nasional Darmajaya (Vol. 1, No. 1, pp. 19-27). 
+[1] Indahyati, Uce., Rahmawati Yunianita. (2020). "BUKU AJAR ALGORITMA DAN PEMROGRAMAN DALAM BAHASA C++". Sidoarjo: Umsida Press. Diakses pada 10 Maret 2024 melalui https://doi.org/10.21070/2020/978-623-6833-67-4.
 <br>
-[2] Seidametova, Z.S. (2021). Some ways of increasing the efficiency of teaching data structures. CEUR Workshop Proceedings.
-<br>
+[2] Fitriyani, D., dkk. (2022). Algoritma dan Pemrograman dalam Bahasa C++. UMSIDA Press. Diakses dari https://press.umsida.ac.id/index.php/umsidapress/article/view/978-623-6833-67-4/759
 

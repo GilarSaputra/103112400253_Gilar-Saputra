@@ -39,7 +39,7 @@ void tampilkanArray(int arr[], int ukuran) {
 }
 
 int main() {
-    const int ukuran = 10; // jumlah elemen array
+    const int ukuran = 10; 
     int arrA[ukuran] = {11, 8, 5, 7, 12, 26, 3, 54, 33, 55};
     int input;
 
