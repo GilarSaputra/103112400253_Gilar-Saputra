@@ -405,232 +405,286 @@ Program di atas berfungsi untuk mengelola data mahasiswa menggunakan struktur da
 ## Unguided 
 
 ### 1. soal unguided 1
-(https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-4/Laprak-modul-3/assets/output-1.png)
+(https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-4/Laprak-modul-4/assets/soal1.png)
+(https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-4/Laprak-modul-4/assets/soal1-2.png)
 
 ```C++
-#include <iostream>
-using namespace std;
-
-struct Mahasiswa {
-    string nama;
-    int nim;
-    float uts, uas, tugas;
-    float nilaiAkhir;
-};
-
-float nilaiAkhir(float uts, float uas, float tugas) {
-    return (0.3 * uts) + (0.4 * uas) + (0.3 * tugas);
-}
-
-int main() {
-    const int jumlahMhs = 10;
-    Mahasiswa mhs[jumlahMhs];
-    int i = 0;
-
-    cout << "=== Input Data Mahasiswa (maks 10) ===" << endl;
-    cout << "Masukkan NIM = 0 untuk berhenti." << endl;
-
-    while (i < jumlahMhs) {
-        cout << "\nNIM : ";
-        cin >> mhs[i].nim;
-
-        if (mhs[i].nim == 0) {
-            break; 
-        }
-
-        cin.ignore(); 
-        cout << "Nama : ";
-        getline(cin, mhs[i].nama);
-
-        cout << "Nilai UTS : ";
-        cin >> mhs[i].uts;
-        cout << "Nilai UAS : ";
-        cin >> mhs[i].uas;
-        cout << "Nilai Tugas : ";
-        cin >> mhs[i].tugas;
-        cout << "---------------------" << endl;
-
-        mhs[i].nilaiAkhir = nilaiAkhir(mhs[i].uts, mhs[i].uas, mhs[i].tugas);
-
-        i++;
-    }
-
-    cout << "\nDaftar Nilai Mahasiswa" << endl;
-    cout << "==============================" << endl;
-
-    for (int j = 0; j < i; j++) {
-        cout << j + 1 << ". NIM: " << mhs[j].nim
-            << ", Nama: " << mhs[j].nama
-            << ", Nilai Akhir: " << mhs[j].nilaiAkhir << endl;
-    }
-
-    return 0;
-}
-
-```
-### Output Unguided 1 :
-
-![Screenshot Output Unguided 1](https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-3/Laprak-modul-3/assets/output-1.png)
-
-
-Kode di atas adalah kode yang berfungsi sebagai pemrosesan data mahasiswa yang sederhana, menggunakan struct Mahasiswa untuk mengorganisir data (nama, NIM, nilai UTS, UAS, Tugas) dan sebuah fungsi terpisah nilaiAkhir untuk menghitung nilai akhir berdasarkan bobot yang ditentukan, kemudian menyimpan data hingga maksimal 10 mahasiswa ke dalam sebuah array sebelum mencetak daftar ringkasan NIM, Nama, dan Nilai Akhir dari semua data yang berhasil diinputkan.
-
-### 2. soal unguided 2
-Buatlah ADT pelajaran sebagai berikut didalam file "pelajaran.h"
-    Type pelajaran <
-        namaMapel : string
-        kodeMapel : string
-    >
-    function create_pelajaran(namapel : string, kodepel : string) -> pelajaran
-    procedure tampil_pelajaran( input pel : pelajaran)
-
-buatlah implementasi ADT pada file "pelajaran.cpp" dan cobalah hasil implementasi pada file "main.cpp"
-
-```C++
-//KODE <pelajaran.h> Start 
-#ifndef PELAJARAN_H
-#define PELAJARAN_H
+//KODE <singlylist.h> Start 
+#ifndef SINGLYLIST_H
+#define SINGLYLIST_H
 
 #include <iostream>
 using namespace std;
 
-struct pelajaran {
-    string namaMapel;
-    string kodeMapel;
+typedef int infotype;
+
+struct Elmlist;          
+typedef Elmlist* address;
+
+struct Elmlist {
+    infotype info;
+    address next;
 };
 
-pelajaran create_pelajaran(string namaMapel, string kodePel);
+struct List {
+    address First;
+};
 
-void tampil_pelajaran(pelajaran pel);
+void CreateList(List &L);
+address alokasi(infotype x);
+void dealokasi(address &p);
+void printInfo(List L);
+void insertFirst(List &L, address p);
 
 #endif
-//KODE <pelajaran.h> End 
+//KODE <singlylist.h> End 
 
-//KODE <pelajaran.cpp> Start
-#include "pelajaran.h"
+//KODE <singlylist.cpp> Start
+#include "Singlylist.h"
 
-pelajaran create_pelajaran(string namaMapel, string kodePel) {
-    pelajaran p;
-    p.namaMapel = namaMapel;
-    p.kodeMapel = kodePel;
+void CreateList(List &L) {
+    L.First = nullptr;
+}
+
+address alokasi(infotype x) {
+    address p = new Elmlist;
+    p->info = x;
+    p->next = nullptr;
     return p;
 }
 
-void tampil_pelajaran(pelajaran pel) {
-    cout << "nama pelajaran: " << pel.namaMapel << endl;
-    cout << "nilai: " << pel.kodeMapel << endl;
+void dealokasi(address &p) {
+    delete p;
+    p = nullptr;
 }
-//KODE <pelajaran.cpp> End
+
+void printInfo(List L) {
+    address p = L.First;
+    while (p != nullptr) {
+        cout << p->info << " ";
+        p = p->next;
+    }
+    cout << endl;
+}
+
+void insertFirst(List &L, address p) {
+    p->next = L.First;
+    L.First = p;
+}
+//KODE <singlylist.cpp> End
 
 //KODE <main.cpp> Start
-#include <iostream>
-#include "pelajaran.h"
-using namespace std;
+#include "Singlylist.h"
 
 int main() {
-    string namapel = "Struktur Data";
-    string kodepel = "STD";
+    List L;
+    address P1, P2, P3, P4, P5 = nullptr;
 
-    pelajaran pel = create_pelajaran(namapel, kodepel);
-    tampil_pelajaran(pel);
+    CreateList(L);
+
+    P1 = alokasi(2);
+    insertFirst(L, P1);
+
+    P2 = alokasi(0);
+    insertFirst(L, P2);
+
+    P3 = alokasi(8);
+    insertFirst(L, P3);
+
+    P4 = alokasi(12);
+    insertFirst(L, P4);
+
+    P5 = alokasi(9);
+    insertFirst(L, P5);
+
+    printInfo(L);
+
+    return 0;
+}
+//KODE <main.cpp> End
+```
+### Output Unguided 1 :
+
+![Screenshot Output Unguided 1](https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-4/Laprak-modul-4/assets/output-1.png)
+
+
+Kode di atas adalah kode yang berfungsi 
+
+### 2. soal unguided 2
+(https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-4/Laprak-modul-4/assets/soal2.png)
+
+
+```C++
+//KODE <singlylist.h> Start 
+#ifndef SINGLYLIST_H
+#define SINGLYLIST_H
+
+#include <iostream>
+using namespace std;
+
+typedef int infotype;
+
+struct Elmlist;          
+typedef Elmlist* address;
+
+struct Elmlist {
+    infotype info;
+    address next;
+};
+
+struct List {
+    address First;
+};
+
+void CreateList(List &L);
+address alokasi(infotype x);
+void dealokasi(address &p);
+void printInfo(List L);
+void insertFirst(List &L, address p);
+
+void deleteFirst(List &L, address &p);
+void deleteLast(List &L, address &p);
+void deleteAfter(List &L, address prec, address &p);
+int nbList(List L);
+void deleteList(List &L);
+
+#endif
+//KODE <singlylist.h> End 
+
+//KODE <singlylist.cpp> Start
+#include "Singlylist.h"
+
+void CreateList(List &L) {
+    L.First = nullptr;
+}
+
+address alokasi(infotype x) {
+    address p = new Elmlist;
+    p->info = x;
+    p->next = nullptr;
+    return p;
+}
+
+void dealokasi(address &p) {
+    delete p;
+    p = nullptr;
+}
+
+void printInfo(List L) {
+    address p = L.First;
+    while (p != nullptr) {
+        cout << p->info << " ";
+        p = p->next;
+    }
+    cout << endl;
+}
+
+void insertFirst(List &L, address p) {
+    p->next = L.First;
+    L.First = p;
+}
+
+void deleteFirst(List &L, address &p) {
+    if (L.First != nullptr) {
+        p = L.First;
+        L.First = p->next;
+        p->next = nullptr;
+    } else {
+        p = nullptr;
+    }
+}
+
+void deleteLast(List &L, address &p) {
+    if (L.First == nullptr) {
+        p = nullptr;
+    } else if (L.First->next == nullptr) {
+        p = L.First;
+        L.First = nullptr;
+    } else {
+        address q = L.First;
+        while (q->next->next != nullptr) {
+            q = q->next;
+        }
+        p = q->next;
+        q->next = nullptr;
+    }
+}
+
+void deleteAfter(List &L, address prec, address &p) {
+    if (prec != nullptr && prec->next != nullptr) {
+        p = prec->next;
+        prec->next = p->next;
+        p->next = nullptr;
+    } else {
+        p = nullptr;
+    }
+}
+
+int nbList(List L) {
+    int count = 0;
+    address p = L.First;
+    while (p != nullptr) {
+        count++;
+        p = p->next;
+    }
+    return count;
+}
+
+void deleteList(List &L) {
+    address p;
+    while (L.First != nullptr) {
+        deleteFirst(L, p);
+        dealokasi(p);
+    }
+}
+//KODE <singlylist.cpp> End
+
+//KODE <main.cpp> Start
+#include "Singlylist.h"
+
+int main() {
+    List L;
+    address P1, P2, P3, P4, P5, Pdel, Prec;
+
+    CreateList(L);
+
+    P1 = alokasi(2);  insertFirst(L, P1);
+    P2 = alokasi(0);  insertFirst(L, P2);
+    P3 = alokasi(8);  insertFirst(L, P3);
+    P4 = alokasi(12); insertFirst(L, P4);
+    P5 = alokasi(9);  insertFirst(L, P5);
+
+    deleteFirst(L, Pdel); 
+    dealokasi(Pdel);
+
+    deleteLast(L, Pdel);  
+    dealokasi(Pdel);
+
+    Prec = L.First;
+    while (Prec != nullptr && Prec->info != 12) {
+        Prec = Prec->next;
+    }
+    deleteAfter(L, Prec, Pdel);
+    dealokasi(Pdel);
+
+    printInfo(L);
+
+    cout << "Jumlah node : " << nbList(L) << endl << endl;
+
+    deleteList(L);
+    cout << "- List Berhasil Terhapus -" << endl;
+    cout << "Jumlah node : " << nbList(L) << endl;
 
     return 0;
 }
 //KODE <main.cpp> End
 
-```
 ### Output Unguided 2:
-
-![Screenshot Output Unguided 2](https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-3/Laprak-modul-3/assets/output-2.png)
-
-Kode di atas adalah kode yang berfungsi sebagai bagaimana ADT memisahkan apa yang dilakukan oleh tipe data (didefinisikan di .h) dari bagaimana implementasinya (dikerjakan di .cpp), untuk mengahasilkan output nama matakuliah beserta kodenya.
-
-### 3. soal unguided 3
-Buatlah program dengan ketentuan :
-    - 2 buah array 2D integer berukuran 3x3 dan 2 buah pointer integer
-    - fungsi/procedure yang menampilkan isi sebuah array integer 2D
-    - fungsi/procedure yang akan menukar isi dari 2 array integer 2D pada posisi tertentu
-    - fungsi/procedure yang akan menukar isi dari variable yang ditunjuk oleh 2 buah pointer
-
-```C++
-#include <iostream>
-using namespace std;
-
-void tampilArray(int arr[3][3]) {
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            cout << arr[i][j] << " ";
-        }
-        cout << endl;
-    }
-}
-
-void menukarIsi(int arr1[3][3], int arr2[3][3], int baris, int kolom) {
-    int temp = arr1[baris][kolom];
-    arr1[baris][kolom] = arr2[baris][kolom];
-    arr2[baris][kolom] = temp;
-}
-
-void ubahDenganPointer(int *ptr1, int *ptr2, int nilaiBaru1, int nilaiBaru2) {
-    *ptr1 = nilaiBaru1;  
-    *ptr2 = nilaiBaru2; 
-}
-
-int main() {
-    int arrA[3][3] = {
-        {12, 2, 8},
-        {8, 11, 6},
-        {7, 8, 5}
-    };
-
-    int arrB[3][3] = {
-        {9, 2, 23},
-        {1, 1, 1},
-        {8, 4, 3}
-    };
-
-    cout << "=== Array A ===" << endl;
-    tampilArray(arrA);
-    cout << "=== Array B ===" << endl;
-    tampilArray(arrB);
-
-    int baris = 1, kolom = 1;
-    menukarIsi(arrA, arrB, baris, kolom);
-
-    cout << "\n=== Setelah Penukaran ===" << endl;
-    cout << "Array A:" << endl;
-    tampilArray(arrA);
-    cout << "Array B:" << endl;
-    tampilArray(arrB);
-
-    cout << "\n=== Ubah Dua Nilai Array A dengan Dua Pointer ===" << endl;
-    int barisPtr1 = 0, kolomPtr1 = 1;
-    int barisPtr2 = 2, kolomPtr2 = 0;
-
-    int *ptr1 = &arrA[barisPtr1][kolomPtr1];
-    int *ptr2 = &arrA[barisPtr2][kolomPtr2];
-
-    cout << "Sebelum diubah: arrA[" << barisPtr1 << "][" << kolomPtr1 << "] = " << *ptr1 
-         << ", arrA[" << barisPtr2 << "][" << kolomPtr2 << "] = " << *ptr2 << endl;
-
-    ubahDenganPointer(ptr1, ptr2, 15, 12);
-
-    cout << "Setelah diubah melalui dua pointer:" << endl;
-    cout << "arrA[" << barisPtr1 << "][" << kolomPtr1 << "] = " << arrA[barisPtr1][kolomPtr1] << endl;
-    cout << "arrA[" << barisPtr2 << "][" << kolomPtr2 << "] = " << arrA[barisPtr2][kolomPtr2] << endl;
-
-    cout << "\n=== Array A Sekarang ===" << endl;
-    tampilArray(arrA);
-
-    return 0;
-}
-
 ```
-### Output Unguided 3 :
 
-![Screenshot Output Unguided 3](https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-3/Laprak-modul-3/assets/output-3.png)
+![Screenshot Output Unguided 2] (https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-4/Laprak-modul-4/assets/output-2.png)
 
-Program di atas, program menunjukan memiliki 2 buah array 3x3 menggunakan array 2 dimensi dan 2 buah pointer, dimana terdapat 2 buah fungsi untuk menampilkan array. Lalu menukar nilai pada posisi array1 dan arrray2, Lalu menukar nilai array dengan nilai pada 2 buah pointer.
+Kode di atas adalah kode yang berfungsi 
 
 ## Kesimpulan
 Pada praktikum Modul 3 ini, mahasiswa mempelajari materi tentang Abstract Data Type (ADT)
