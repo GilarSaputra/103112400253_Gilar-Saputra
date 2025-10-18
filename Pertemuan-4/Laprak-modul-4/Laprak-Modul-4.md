@@ -1,8 +1,17 @@
-# <h1 align="center">Laporan Praktikum Modul 4 - Abstract Data Type (ADT)</h1>
+# <h1 align="center">Laporan Praktikum Modul 4 - Singly Linked List (Bagian Pertama)</h1>
 <p align="center">Gilar Saputra - 103112400253</p>
 
 ## Dasar Teori
-Abstract Data Type (ADT) merupakan suatu model matematis untuk tipe data, yang didefinisikan secara konseptual berdasarkan perilaku (semantics) tipe data tersebut dari sudut pandang pengguna, tanpa menspesifikasikan detail implementasinya (prinsip abstraksi dan enkapsulasi)[2]. Sesuai dengan materi praktikum, ADT terdiri dari TYPE dan sekumpulan PRIMITIF (operasi dasar) yang berlaku pada tipe tersebut, yang juga mencakup invarian dan aksioma. Primitif dikelompokkan menjadi: Konstruktor/Kreator (pemebentuk nilai), Selector (pengakses komponen), Prosedur pengubah nilai, Tipe validator, Destruktor/Dealokator, Baca/Tulis (untuk I/O), Operator relasional, Aritmatika, dan Konversi. Implementasi ADT secara umum sering dipisahkan ke dalam dua modul utama: file Definisi/Spesifikasi Type dan Primitif (.h), yang memuat deklarasi struktur data dan signature operasi, serta file Body/Realisasi Primitif (.c/.cpp), yang memuat kode program untuk implementasi operasi tersebut. Konsep ADT ini menjadi fundamental dalam ilmu komputer, digunakan dalam perancangan dan analisis algoritma, struktur data (seperti Stack atau Queue), serta penting dalam metodologi pemrograman berorientasi objek (Object-Oriented Programming) untuk mencapai modularitas, dan mendukung reusabilitas kode, seperti yang dijelaskan dalam berbagai jurnal dan literatur akademik[1].
+Singly Linked List adalah salah satu bentuk struktur data dinamis yang terdiri dari kumpulan elemen yang disebut node, di mana setiap node menyimpan dua bagian data yaitu informasi (data) dan pointer (next) yang menunjuk ke node berikutnya. Tidak seperti array yang memiliki ukuran tetap, linked list dapat menambah atau menghapus elemen secara fleksibel selama program berjalan. Struktur dasar node biasanya terdiri dari info dan next, dengan elemen pertama disebut head dan elemen terakhir menunjuk ke NULL[2].
+
+Operasi dasar pada singly linked list meliputi:
+    1. Create List: Membuat list kosong.
+    2. Insert: Menambahkan elemen pada awal, tengah (setelah node tertentu), atau akhir list.
+    3. Delete: Menghapus elemen dari posisi tertentu (awal, tengah, atau akhir).
+    4. Traversal / Print Info: Menelusuri dan menampilkan isi seluruh node.
+    5. Dealokasi: Menghapus node dari memori agar tidak terjadi kebocoran memori.
+
+Struktur ini banyak digunakan karena efisien dalam manipulasi data, terutama ketika sering terjadi operasi penambahan dan penghapusan elemen. Namun, kelemahannya dibanding array adalah sulit mengakses elemen secara langsung karena setiap node harus ditelusuri satu per satu.
 
 
 ### A. Materi Praktikum <br/>
@@ -506,8 +515,7 @@ int main() {
 
 ![Screenshot Output Unguided 1](https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-4/Laprak-modul-4/assets/output-1.png)
 
-
-Kode di atas adalah kode yang berfungsi 
+ Program di atas membuat list berisi data bertipe int, lalu menambahkan elemen ke dalamnya dari depan (menggunakan insertFirst). Fungsi CreateList membuat list kosong, alokasi membuat node baru, dealokasi menghapus node dari memori, dan printInfo menampilkan semua isi list. Hasil akhirnya, program mencetak data 9 12 8 0 2 yang disusun terbalik dari urutan input karena setiap elemen selalu ditambahkan di awal list.
 
 ### 2. soal unguided 2
 ![](https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-4/Laprak-modul-4/assets/soal2.png)
@@ -681,12 +689,12 @@ int main() {
 ### Output Unguided 2:
 ![Screenshot Output Unguided 2](https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-4/Laprak-modul-4/assets/output-2.png)
 
-Kode di atas adalah kode yang berfungsi 
+Program di atas merupakan lanjutan dari progran ungided 1 dimana terdapat fitur tambahan untuk menghapus node. deleteFirst, deleteLast, dan deleteAfter menghapus node, nbList menghitung jumlah node, dan deleteList menghapus seluruh isi list. Hasil akhirnya menampilkan sisa data di list beserta jumlah node yang tersisa setelah operasi penghapusan.
 
 ## Kesimpulan
-Pada praktikum Modul 3 ini, mahasiswa mempelajari materi tentang Abstract Data Type (ADT)
+Dari praktikum tentang Singly Linked List dan contoh program di atas, dapat disimpulkan bahwa linked list merupakan salah satu struktur data dinamis yang memungkinkan penyimpanan dan pengelolaan data secara fleksibel tanpa harus menentukan ukuran tetap seperti pada array. Setiap elemen dalam linked list disebut node dan terdiri dari dua bagian utama, yaitu data dan pointer yang menunjuk ke node berikutnya[1].
 
-konsep fundamental Abstract Data Type (ADT) telah  dipahami dan diimplementasikan, terutama melalui pemisahan antara spesifikasi (.h) dan realisasi (.cpp), seperti yang ditunjukkan pada implementasi ADT Pelajaran[2]. Melalui praktikum ini, praktikan dapat mendefinisikan tipe data baru (struct) dan mengelompokkannya dengan operasi dasar (primitif) yang relevan, menjadikan kode program lebih modular dan reusable. Selain ADT, praktikum juga mencakup penerapan struktur data kolektif, yaitu Array 1D untuk menyimpan sekumpulan objek ADT Mahasiswa dan Array 2D untuk memanipulasi data matriks, serta penggunaan Pointer untuk operasi penukaran nilai variabel secara langsung melalui alamat memorinya, menegaskan pemahaman tentang pengelolaan data dan memori dalam konteks pemrograman prosedural C++[2].
+Melalui implementasi program, dapat dipahami cara kerja operasi dasar pada linked list seperti pembuatan list (CreateList), penambahan data (insert), penghapusan data (delete), penelusuran data (printInfo), serta penghapusan seluruh list (deleteList)[1]. Program juga memperlihatkan bagaimana pointer digunakan untuk menghubungkan node-node dalam memori. Dengan memahami konsep dan penerapan ini, mahasiswa dapat mengelola data secara efisien dan menguasai dasar dari struktur data yang menjadi fondasi berbagai algoritma dan struktur data kompleks lainnya[2].
 
 ## Referensi
 [1] Indahyati, Uce., Rahmawati Yunianita. (2020). "BUKU AJAR ALGORITMA DAN PEMROGRAMAN DALAM BAHASA C++". Sidoarjo: Umsida Press. Diakses pada 10 Maret 2024 melalui https://doi.org/10.21070/2020/978-623-6833-67-4.
