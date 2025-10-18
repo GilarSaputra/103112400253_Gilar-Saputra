@@ -7,8 +7,7 @@ Abstract Data Type (ADT) merupakan suatu model matematis untuk tipe data, yang d
 
 ### A. Materi Praktikum <br/>
 ...
-### 1. Struct
-### 2. ADT
+### 1. Single Link List
 
 ### B. Tugas Laprak <br/>
 ...
@@ -405,8 +404,8 @@ Program di atas berfungsi untuk mengelola data mahasiswa menggunakan struktur da
 ## Unguided 
 
 ### 1. soal unguided 1
-(https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-4/Laprak-modul-4/assets/soal1.png)
-(https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-4/Laprak-modul-4/assets/soal1-2.png)
+![Soal Nomor 1](https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-4/Laprak-modul-4/assets/soal1.png)
+![](https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-4/Laprak-modul-4/assets/soal1-2.png)
 
 ```C++
 //KODE <singlylist.h> Start 
@@ -511,7 +510,7 @@ int main() {
 Kode di atas adalah kode yang berfungsi 
 
 ### 2. soal unguided 2
-(https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-4/Laprak-modul-4/assets/soal2.png)
+![](https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-4/Laprak-modul-4/assets/soal2.png)
 
 
 ```C++
@@ -678,11 +677,9 @@ int main() {
     return 0;
 }
 //KODE <main.cpp> End
-
-### Output Unguided 2:
 ```
-
-![Screenshot Output Unguided 2] (https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-4/Laprak-modul-4/assets/output-2.png)
+### Output Unguided 2:
+![Screenshot Output Unguided 2](https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-4/Laprak-modul-4/assets/output-2.png)
 
 Kode di atas adalah kode yang berfungsi 
 
