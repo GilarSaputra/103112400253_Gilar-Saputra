@@ -449,10 +449,8 @@ Procedure insertAfter ( input / output L : List, input nodeBaru : address, input
 Function nbList (input L : List ) integer
 Procedure delAfter ( input / output L : List, input nodeHapus : address, input nodePrev : address )
 ```
-![](https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-5/Laprak-modul-5/assets/unguided.png)
 kemudian buatlah implementasi function & procedure tersebut pada file “listAngka.cpp”
 kemudian lakukan hal berikut pada file “main.cpp”
-![](https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-5/Laprak-modul-5/assets/unguided.png)
 
 ### 1. soal unguided 1
 
