@@ -30,7 +30,7 @@ Struktur ini banyak digunakan karena efisien dalam manipulasi data, terutama ket
 
 ### 1. Contoh implementasi ListBuah ADT SinglyList
 
-```C++
+listBuah.h
 ```listBuah.h
 #ifndef LISTBUAH_H
 #define LISTBUAH_H
