@@ -30,7 +30,6 @@ Struktur ini banyak digunakan karena efisien dalam manipulasi data, terutama ket
 
 ### 1. Contoh implementasi ListBuah ADT SinglyList
 
-```C++
 ```listBuah.h
 #ifndef LISTBUAH_H
 #define LISTBUAH_H
@@ -81,6 +80,7 @@ void FindNodeByAddress(linkedlist list, address node);
 void FindNodeByRange(linkedlist list, float hargaAwal, float HargaAkhir);
 
 #endif
+```
 
 ```listBuah.cpp
 #include "listBuah.h"
