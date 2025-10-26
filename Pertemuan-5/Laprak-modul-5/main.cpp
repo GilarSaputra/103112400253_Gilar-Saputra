@@ -33,23 +33,24 @@ int main() {
     updateAfter(L, nodeF);  
 
     cout << endl << "List setelah update:" << endl;
-    printList(L);     
-    
+    printList(L);    
+
+    // Soal Nomor 2
     SearchByData(L, 20);   
     SearchByData(L, 55);  
     SearchByAddress(L, nodeB); 
     SearchByAddress(L, nodeA); 
     SearchByRange(L, 40); 
 
+    // Soal Nomor 3
     cout << endl;
     cout << "===============================" << endl;
     cout << "   Operasi Aritmetika List" << endl;
     cout << "===============================" << endl;
 
-    sumList(L);
-    subList(L);
-    multiplyList(L);
-
+    penjumlahanList(L);
+    penguranganList(L);
+    perkalianList(L);
 
     return 0;
 };

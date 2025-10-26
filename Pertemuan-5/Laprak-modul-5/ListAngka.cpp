@@ -177,8 +177,7 @@ void SearchByRange(linkedList L, int nilaiMin) {
 }
 
 // SoalNomor 3
-// Menjumlahkan semua data dalam list
-void sumList(linkedList L) {
+void penjumlahanList(linkedList L) {
     address P = L.First;
     int total = 0;
 
@@ -190,15 +189,14 @@ void sumList(linkedList L) {
     cout << "Total penjumlahan : " << total << endl;
 }
 
-// Mengurangkan semua data dalam list (dimulai dari node pertama)
-void subList(linkedList L) {
+void penguranganList(linkedList L) {
     if (L.First == nullptr) {
         cout << "List kosong!" << endl;
         return;
     }
 
     address P = L.First->Next;
-    int total = L.First->Angka; // nilai awal = data node pertama
+    int total = L.First->Angka; 
 
     while (P != nullptr) {
         total -= P->Angka;
@@ -208,15 +206,14 @@ void subList(linkedList L) {
     cout << "Total pengurangan : " << total << endl;
 }
 
-// Mengalikan semua data dalam list
-void multiplyList(linkedList L) {
+void perkalianList(linkedList L) {
     if (L.First == nullptr) {
         cout << "List kosong!" << endl;
         return;
     }
 
     address P = L.First;
-    long long total = 1; // nilai awal 1
+    long long total = 1;
 
     while (P != nullptr) {
         total *= P->Angka;
@@ -225,4 +222,3 @@ void multiplyList(linkedList L) {
 
     cout << "Total perkalian : " << total << endl;
 }
-

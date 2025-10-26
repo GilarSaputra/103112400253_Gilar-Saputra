@@ -39,8 +39,8 @@ void SearchByAddress(linkedList L, address node);
 void SearchByRange(linkedList L, int nilaiMin);
 
 // Soal Nomor 3
-void sumList(linkedList L);
-void subList(linkedList L);
-void multiplyList(linkedList L);
+void penjumlahanList(linkedList L);
+void penguranganList(linkedList L);
+void perkalianList(linkedList L);
 
 #endif
