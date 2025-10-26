@@ -1,7 +1,8 @@
-# <h1 align="center">Laporan Praktikum Modul 4 - Singly Linked List (Bagian Pertama)</h1>
+# <h1 align="center">Laporan Praktikum Modul 4 - Singly Linked List (Bagian Kedua)</h1>
 <p align="center">Gilar Saputra - 103112400253</p>
 
 ## Dasar Teori
+Singly Linked List merupakan salah satu struktur data dinamis yang terdiri dari sekumpulan elemen yang disebut node, di mana setiap node memiliki dua bagian utama, yaitu data dan pointer yang menunjuk ke node berikutnya. Berbeda dengan array yang memiliki ukuran tetap, singly linked list memungkinkan penambahan serta penghapusan elemen secara fleksibel tanpa perlu menggeser data lain. Node pertama disebut head, sedangkan node terakhir menunjuk ke nullptr sebagai penanda akhir list [3]. Dalam implementasinya di bahasa C++, singly linked list menggunakan struct untuk mendefinisikan node yang berisi data bertipe dasar seperti int dan pointer bertipe address. Manipulasi list dilakukan melalui fungsi-fungsi seperti insertFirst(), insertLast(), insertAfter(), delAfter(), dan printList(), sesuai dengan prinsip Abstract Data Type (ADT), di mana operasi terhadap data dilakukan melalui fungsi tanpa mengakses struktur internal secara langsung. Program ini juga menambahkan operasi tambahan seperti update untuk memperbarui nilai node, search untuk pencarian berdasarkan data, alamat, dan rentang nilai, serta operasi aritmetika seperti penjumlahan, pengurangan, dan perkalian antar node [1]. Kelebihan singly linked list terletak pada efisiensi dalam menambah dan menghapus data karena tidak memerlukan penggeseran elemen, sementara kelemahannya adalah akses data yang bersifat sekuensial, sehingga pencarian elemen memerlukan penelusuran dari node pertama hingga node yang diinginkan [3].
 
 ### A. Materi Praktikum <br/>
 ...
@@ -410,7 +411,13 @@ int main(){
     return 0;
 }
 ```
-Program di atas merupakan 
+Program di atas merupakan implementasi struktur data linked list dalam bahasa C++ untuk mengelola data buah secara dinamis. Struktur utama yang digunakan terdiri dari tiga bagian, yaitu buah, node, dan linkedlist. Struktur buah berfungsi untuk menyimpan data setiap buah seperti nama, jumlah, dan harga. Struktur node menyimpan satu data buah (isidata) serta pointer next yang menunjuk ke node berikutnya. Sedangkan struktur linkedlist menyimpan alamat node pertama (first) sebagai penanda awal list.
+
+Pada file listBuah.cpp, berbagai fungsi didefinisikan untuk memanipulasi data dalam linked list. Fungsi dasar seperti createList() digunakan untuk menginisialisasi list agar kosong, sedangkan isEmpty() memeriksa apakah list sudah berisi data atau belum. Fungsi alokasi() membuat node baru dengan data buah yang diberikan, dan dealokasi() menghapus node dari memori. Untuk menambah data ke dalam list, digunakan fungsi insertFirst(), insertAfter(), dan insertLast() yang masing-masing menambahkan node di awal, setelah node tertentu, dan di akhir list.
+
+Selain itu, terdapat fungsi penghapusan seperti delFirst(), delLast(), dan delAfter() yang menghapus node pertama, terakhir, atau setelah node tertentu. Fungsi deleteList() akan menghapus seluruh isi list hingga kosong. Program juga menyediakan fitur untuk memperbarui data, yaitu updateFirst(), updateLast(), dan updateAfter() untuk mengubah isi node pertama, terakhir, atau setelah node tertentu. Untuk pencarian data, digunakan fungsi FindNodeByData() untuk mencari buah berdasarkan nama, FindNodeByAddress() untuk mencari berdasarkan alamat node, dan FindNodeByRange() untuk mencari buah dengan harga dalam rentang tertentu.
+
+Pada file main.cpp, fungsi-fungsi tersebut diuji. Program dimulai dengan membuat list kosong, lalu menambahkan beberapa buah seperti Jeruk, Apel, Pir, Semangka, dan Durian menggunakan kombinasi fungsi insert. Setelah itu, data ditampilkan, diupdate, serta dicari berdasarkan kriteria tertentu. Program juga mendemonstrasikan proses penghapusan node dan pengosongan seluruh list. Secara keseluruhan, program ini menunjukkan bagaimana linked list dapat digunakan untuk menambah, menghapus, mengubah, menelusuri, dan mencari data secara fleksibel menggunakan pointer dan memori dinamis di C++.
 
 ## Unguided 
 Buatlah ADT Singly Linked list sebagai berikut di dalam file “ListAngka.h” :
@@ -611,14 +618,14 @@ Procedure updateFirst ( input / output L : List )
 Procedure updateLast ( input / output L : List )
 Procedure updateAfter ( input / output L : List, input nodePrev : address )
 ```
-Kemudian pada “main.cpp” lakukanlah :
-    ➢ Update data 40 menjadi 50
-    ➢ Update data 8 menjadi 29
-    ➢ Update data 33 menjadi 45
-    ➢ Update data 18 menjadi 20
-    ➢ Tampilkan seluruh list setelah diupdate
+Kemudian pada “main.cpp” lakukanlah :<br/>
+    ➢ Update data 40 menjadi 50 <br/>
+    ➢ Update data 8 menjadi 29 <br/>
+    ➢ Update data 33 menjadi 45 <br/>
+    ➢ Update data 18 menjadi 20 <br/>
+    ➢ Tampilkan seluruh list setelah diupdate <br/>
 ### Jawaban
-Tambahkan kode berikut pada :
+Tambahkan kode berikut pada : <br/>
 ListAngka.h
 ```C++
 // Soal Nomor 1
@@ -688,7 +695,8 @@ main.h
 
 ![Screenshot Output Unguided 1](https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-5/Laprak-modul-5/assets/output-1.png)
 
- Program di atas 
+ Program di atas adalah lanjutan dari sebuah program awal pada unguided, dimana program ini melakukan penambahan : <br/>
+ Program menambahkan fitur untuk mengubah (update) data pada node dalam struktur linked list. Tiga fungsi baru ditambahkan, yaitu `updateFirst()`, `updateLast()`, dan `updateAfter()`. Fungsi `updateFirst()` digunakan untuk memperbarui nilai data pada node pertama dalam list, sedangkan `updateLast()` memperbarui nilai pada node terakhir dengan cara menelusuri list hingga ke ujung. Sementara itu, `updateAfter()` berfungsi untuk memperbarui data pada node yang berada setelah node tertentu yang ditentukan melalui parameter `nodePrev`. Pada bagian `main.cpp`, program menampilkan isi list sebelum dan sesudah proses update agar perubahan terlihat jelas. Dengan penambahan fitur ini, program tidak hanya dapat menambah atau menghapus data, tetapi juga mampu memodifikasi nilai node secara fleksibel di posisi manapun dalam linked list.
 
 ### 2. soal unguided 2
 Buatlah procedure SearchByData, SearchByAddress, dan SearchByRange dengan rincian sebagai berikut :
@@ -697,14 +705,14 @@ Procedure SearchByData( input L : List, input data : integer )
 Procedure SearchByAddress( input L : List, input node : address )
 Procedure SearchByRange( input L : List, input nilaiMin : integer )
 ```
-Kemudian pada “main.cpp” lakukanlah :
-    ➢ Mencari data nilai 20
-    ➢ Mencari data nilai 55
-    ➢ Mencari data alamat nodeB
-    ➢ Mencari data alamat nodeA
-    ➢ Mencari data dengan nilai minimal 40
+Kemudian pada “main.cpp” lakukanlah : <br/>
+    ➢ Mencari data nilai 20 <br/>
+    ➢ Mencari data nilai 55 <br/>
+    ➢ Mencari data alamat nodeB <br/>
+    ➢ Mencari data alamat nodeA <br/>
+    ➢ Mencari data dengan nilai minimal 40 <br/>
 ### Jawaban
-Tambahkan kode berikut pada :
+Tambahkan kode berikut pada : <br/>
 ListAngka.h
 ```C++
 // soal Nomor 2
@@ -796,12 +804,13 @@ main.cpp
 ### Output Unguided 2:
 ![Screenshot Output Unguided 2](https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-5/Laprak-modul-5/assets/output-2.png)
 
-Program di atas merupakan lanjutan 
+ Program di atas adalah lanjutan dari sebuah program awal pada unguided, dimana program ini melakukan penambahan : <br/>
+Program menambahkan fitur pencarian data dalam linked list menggunakan tiga metode berbeda. Fungsi `SearchByData()` digunakan untuk mencari node berdasarkan nilai data tertentu, dengan menampilkan posisi node jika ditemukan. Fungsi `SearchByAddress()` melakukan pencarian berdasarkan alamat node (pointer), berguna untuk memastikan posisi node tertentu di memori. Sedangkan `SearchByRange()` mencari dan menampilkan semua node yang memiliki nilai lebih besar atau sama dengan batas minimum (nilaiMin) yang diberikan. Pada bagian main.cpp, ketiga fungsi ini diuji dengan berbagai parameter untuk memastikan setiap metode pencarian berjalan dengan baik. Dengan demikian, fitur ini membuat program mampu melakukan pencarian data secara lebih fleksibel dan informatif, baik berdasarkan nilai, alamat, maupun rentang nilai dalam linked list.
 
 ### 3. soal unguided 3
 Lakukanlah operasi aritmetika penjumlahan, pengurangan, dan perkalian terhadap semua data yang ada didalam list tersebut! Untuk penjumlahan nilai awal adalah 0, untuk pengurangan nilai awal adalah nilai node pertama (first), untuk perkalian nilai awal adalah 1.
 ### Jawaban
-Tambahkan kode berikut pada :
+Tambahkan kode berikut pada : <br/>
 ListAngka.h
 ```C++
 // Soal Nomor 3
@@ -871,21 +880,18 @@ main.cpp
     penjumlahanList(L);
     penguranganList(L);
     perkalianList(L);
-
 ```
 ### Output Unguided 3:
 ![Screenshot Output Unguided 3](https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-5/Laprak-modul-5/assets/output-3.png)
 
-Program di atas merupakan lanjutan dari program
-
+ Program di atas adalah lanjutan dari sebuah program awal pada unguided, dimana program ini melakukan penambahan : <br/>
+Pada soal nomor 3, program menambahkan fitur untuk melakukan operasi aritmetika pada seluruh elemen linked list, yaitu penjumlahan, pengurangan, dan perkalian. Fungsi `penjumlahanList()` menghitung total dari semua nilai node dalam list dengan cara menjumlahkan tiap elemen satu per satu. Fungsi `penguranganList()` melakukan operasi pengurangan secara berurutan, dimulai dari nilai node pertama lalu dikurangi dengan nilai node-node berikutnya. Sedangkan `perkalianList()` menghitung hasil kali dari semua elemen dalam list menggunakan variabel bertipe long long agar mampu menampung hasil besar. Ketiga fungsi ini kemudian dipanggil di bagian main.cpp untuk menampilkan hasil operasi aritmetika tersebut. Dengan penambahan fitur ini, program menjadi lebih fungsional karena mampu melakukan perhitungan matematis langsung pada data dalam linked list.
 
 ## Kesimpulan
-Dari praktikum tentang Singly Linked List dan contoh program di atas, dapat disimpulkan bahwa linked list merupakan salah satu struktur data dinamis yang memungkinkan penyimpanan dan pengelolaan data secara fleksibel tanpa harus menentukan ukuran tetap seperti pada array. Setiap elemen dalam linked list disebut node dan terdiri dari dua bagian utama, yaitu data dan pointer yang menunjuk ke node berikutnya[1].
-
-Melalui implementasi program, dapat dipahami cara kerja operasi dasar pada linked list seperti pembuatan list (CreateList), penambahan data (insert), penghapusan data (delete), penelusuran data (printInfo), serta penghapusan seluruh list (deleteList)[1]. Program juga memperlihatkan bagaimana pointer digunakan untuk menghubungkan node-node dalam memori. Dengan memahami konsep dan penerapan ini, mahasiswa dapat mengelola data secara efisien dan menguasai dasar dari struktur data yang menjadi fondasi berbagai algoritma dan struktur data kompleks lainnya[2].
+Berdasarkan praktikum yang telah dilakukan, dapat disimpulkan bahwa implementasi ADT list melalui struktur singly linked list memberikan kemudahan manipulasi data secara dinamis—termasuk penambahan, penghapusan, pencarian, pembaruan, dan operasi aritmetika terhadap elemen-elemen list[3]. Fleksibilitas ini sangat berguna dalam situasi di mana ukuran data berubah secara dinamis atau diperlukan operasi penyisipan/hapus yang sering. Namun demikian, terdapat batasan ketika akses elemen tidak seefisien array karena harus menelusuri dari head hingga node target. Oleh karena itu, pemilihan struktur data harus disesuaikan dengan kebutuhan aplikasi: jika penyisipan/hapus sering dan ukuran tidak tetap maka SLL sangat cocok; jika akses cepat ke indeks spesifik diperlukan maka struktur seperti array atau list BERIMPLENTASI-LAIN mungkin lebih tepat. Praktikum ini juga menegaskan pentingnya memahami konsep ADT, pointer, alokasi dinamis, dan manajemen memory dalam C++ sebagai bagian dari penguasaan struktur data[3].
 
 ## Referensi
-[1] Indahyati, Uce., Rahmawati Yunianita. (2020). "BUKU AJAR ALGORITMA DAN PEMROGRAMAN DALAM BAHASA C++". Sidoarjo: Umsida Press. Diakses pada 10 Maret 2024 melalui https://doi.org/10.21070/2020/978-623-6833-67-4.
-<br>
-[2] Fitriyani, D., dkk. (2022). Algoritma dan Pemrograman dalam Bahasa C++. UMSIDA Press. Diakses dari https://press.umsida.ac.id/index.php/umsidapress/article/view/978-623-6833-67-4/759
+[1] Wijoyo, A., Prasetiyo, A. R., Salsabila, A. A., Nife, K., Murni, & Nadapdap, P. B. (2024). Evaluasi Efisiensi Struktur Data Linked List pada Implementasi Sistem Antrian. JRIIN : Jurnal Riset Informatika Dan Inovasi, 1(12), 1244-1246. Diakses dari https://jurnalmahasiswa.com/index.php/jriin/article/view/1060 <br/>
+[2]Memahami Konsep dan Jenis-Jenis Linked List dalam Struktur Data.“ (2024). Terapan-TI Vokasi UNESA. Diakses dari https://terapan-ti.vokasi.unesa.ac.id/post/memahami-konsep-dan-jenis-jenis-linked-list-dalam-struktur-data
+
 
