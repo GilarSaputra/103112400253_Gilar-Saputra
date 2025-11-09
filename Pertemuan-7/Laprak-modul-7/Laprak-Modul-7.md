@@ -631,7 +631,7 @@ int main(){
 ```
 ### Output Unguided 1 :
 
-![Screenshot Output Unguided 1](https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-7/Laprak-modul-7/assets/output-1.png)
+![Screenshot Output Unguided 1](https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-7/Laprak-modul-7/assets/output-1.png)<br/>
 Program ini mengimplementasikan Abstract Data Type (ADT) Stack menggunakan array statis berkapasitas 20 elemen (int info[20]). Stack bersifat LIFO (Last In, First Out) — elemen terakhir yang dimasukkan akan menjadi elemen pertama yang diambil. 
 Program terdiri dari tiga bagian utama: definisi tipe (stack.h), implementasi operasi stack (stack.cpp), dan program utama (main).
 
@@ -769,7 +769,7 @@ int main(){
 }
 ```
 ### Output Unguided 2:
-![Screenshot Output Unguided 2](https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-7/Laprak-modul-7/assets/output-2.png)
+![Screenshot Output Unguided 2](https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-7/Laprak-modul-7/assets/output-2.png)<br/>
 Melanjutkan kode pada Unguided 1,
 Program ini bertujuan untuk mengimplementasikan struktur data Stack berbasis array statis, dengan tambahan fitur:
     1. Operasi dasar (Push, Pop, printInfo, balikStack) menunjukkan prinsip LIFO.
@@ -915,7 +915,7 @@ int main(){
 }
 ```
 ### Output Unguided 3:
-![Screenshot Output Unguided 3](https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-7/Laprak-modul-7/assets/output-3.png)
+![Screenshot Output Unguided 3](https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-7/Laprak-modul-7/assets/output-3.png)<br/>
 Melanjutkan kode unguided 1 dan 2
 Program ini adalah implementasi struktur data Stack berbasis array statis dengan kapasitas maksimum 20 elemen.
 Stack bekerja dengan prinsip LIFO (Last In, First Out), yaitu data terakhir yang dimasukkan akan menjadi data pertama yang dikeluarkan.
