@@ -1,0 +1,43 @@
+#ifndef DLLPLAYLIST_H
+#define DLLPLAYLIST_H
+
+#include <iostream>
+using namespace std;
+
+struct Song {
+    string title;
+    string artist;
+    int durationSe;
+    int playCount;
+    float rating;
+};
+
+struct Node {
+    Song info;
+    address prev;
+    address next;
+};
+
+typedef Node* address;
+
+struct List {
+    address head;
+    address tail;
+};
+
+bool isEmpty(List L);
+void createList(List &L);
+address allocate(Song S);
+void deallocate(address &P);
+void insertFirst(List &L, Song S);
+void insertLast(List &L, Song S);
+void insertAfter(List &L, address Q, Song S);
+void insertBefore(List &L, address Q, Song S);
+void deleteFirst(List &L, Song &S);
+void deleteLast(List &L, Song &S);
+void deleteAfter(List &L, address Q, Song &S);
+void deleteBefore(List &L, address Q, Song &S);
+void viewList(List L);
+void searchByPopularityRange(List L, float minScore, float maxScore);
+
+#endif
