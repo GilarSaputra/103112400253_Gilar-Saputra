@@ -619,7 +619,7 @@ int main() {
 ### Output Unguided 1 :
 
 ![Screenshot Output Unguided 1](https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-13/Laprak-modul-14/assets/output-1.png)
-Fungsi program di atas 
+Fungsi program di atas as
 
 ### 2. soal unguided 2
 Carilah elemen dengan nomor polisi D001 dengan membuat fungsi baru.
