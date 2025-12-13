@@ -1081,7 +1081,7 @@ Dengan penambahan
     6. PrintBFS()       => untuk mengimplementasikan dan mengeprint algoritma BFS pada node A
 
 ## Kesimpulan
-Graph adalah struktur data non-linear yang terdiri dari himpunan simpul (node atau vertec) dan sisi (edge) yang merepresentasikan relasi. Dalam praktikum ini, Graph berhasil diimplementasikan secara dinamis menggunakan Multi Linked List (Multilist) dan pointer. Representasi ini menggunakan struktur ganda (ElmNode untuk simpul dan ElmEdge untuk sisi) yang memungkinkan penambahan dan penghapusan simpul serta sisi yang fleksibel.[1]
+Graph adalah struktur data non-linear yang terdiri dari himpunan simpul (node atau vertec) dan sisi (edge) yang merepresentasikan relasi. Dalam praktikum ini, Graph diimplementasikan secara dinamis menggunakan Multi Linked List (Multilist) dan pointer. Representasi ini menggunakan struktur ganda (ElmNode untuk simpul dan ElmEdge untuk sisi) yang memungkinkan penambahan dan penghapusan simpul serta sisi yang fleksibel.[1]
 
 Algoritma Penelusuran (Traversal):Dua metode fundamental untuk menelusuri Graph telah berhasil diimplementasikan:
     - Breadth First Search (BFS) diimplementasikan dengan memanfaatkan struktur data Queue (Antrian). BFS menelusuri Graph      secara horizontal (berdasarkan level kedalaman), menjamin bahwa semua simpul di kedalaman telah dikunjungi.
