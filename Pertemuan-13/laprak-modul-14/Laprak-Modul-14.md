@@ -474,7 +474,7 @@ procedure ConnectNode (input/output N1, N2 : adrNode)
 procedure PrintInfoGraph (input G : Graph)
 ```
 Buatlah implementasi ADT Graph pada file “graph.cpp” dan cobalah hasil implementasi ADT pada file “main.cpp”.
-![Gambar 14-14 Ilustrasi Graph](https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-13/Laprak-modul-14/assets/soal-1.png) </br>
+![Gambar 14-14 Ilustrasi Graph](https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-13/laprak-modul-14/assets/soal-1.png) </br>
 
 ### Jawaban
 graph.h
@@ -631,7 +631,7 @@ int main() {
 ```
 ### Output Unguided 1 :
 
-![Screenshot Output Unguided 1](https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-13/Laprak-modul-14/assets/output-1.png)
+![Screenshot Output Unguided 1](https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-13/laprak-modul-14/assets/output-1.png)
 Program diatas adalah program untuk membuat sebuah Graph dengan mengimlementasikan ADT. Program meminta unutk menghubungkan node A-B-C-D-E-F-G-H seperti pada gambar, dimana dalam struktur terdapat ElmNode untuk merepresentasikan node, dan ElmEdge untuk merepresentasikan edge/garis penghubung antar node.
 
 Fungsi-Fungsi yang ada pada program adalah :
@@ -833,7 +833,7 @@ int main() {
 }
 ```
 ### Output Unguided 2:
-![Screenshot Output Unguided 2](https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-13/Laprak-modul-14/assets/output-2.png)
+![Screenshot Output Unguided 2](https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-13/laprak-modul-14/assets/output-2.png)
 Program diatas adalah program yang melanjutkan unguided 1  untuk membuat sebuah Graph dengan mengimlementasikan ADT. Program meminta unutk menghubungkan node A-B-C-D-E-F-G-H seperti pada gambar, dimana dalam struktur terdapat ElmNode untuk merepresentasikan node, dan ElmEdge untuk merepresentasikan edge/garis penghubung antar node. Di mana program ini menambah sebuah fungsi unutuk mengimplementasikan Depth First Search (DFS)
 
 Fungsi-Fungsi yang ada pada program adalah :
@@ -1068,7 +1068,7 @@ int main() {
 }
 ```
 ### Output Unguided 3:
-![Screenshot Output Unguided 3](https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-13/Laprak-modul-14/assets/output-3.png)
+![Screenshot Output Unguided 3](https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-13/laprak-modul-14/assets/output-3.png)
 Program diatas adalah program yang melanjutkan unguided 1 dan 2 untuk membuat sebuah Graph dengan mengimlementasikan ADT. Program meminta unutk menghubungkan node A-B-C-D-E-F-G-H seperti pada gambar, dimana dalam struktur terdapat ElmNode untuk merepresentasikan node, dan ElmEdge untuk merepresentasikan edge/garis penghubung antar node. Di mana program ini menambah sebuah fungsi untuk mengimplementasikan Breadth First Search (BFS)
 
 Fungsi-Fungsi yang ada pada program adalah :
