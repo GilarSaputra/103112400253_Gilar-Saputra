@@ -2,7 +2,20 @@
 <p align="center">Gilar Saputra - 103112400253</p>
 
 ## Dasar Teori
+Graf adalah struktur data yang terdiri dari kumpulan simpul (vertex) dan himpunan sisi (edge) yang menghubungkan pasangan simpul. Graf dipakai untuk memodelkan relasi antar objek nyata seperti jaringan jalan, jaringan komputer, relasi sosial, dan lain-lain.[2] Konsep ini dibahas secara komprehensif dalam literatur pengantar struktur data berbahasa Indonesia dan makalah aplikasi graf.
 
+Graph dapat dibedakan menjadi beberapa jenis, di antaranya:
+    1. Graph Berarah (Directed Graph) : Merupakan Graph di mana setiap edge memiliki arah, yang menunjukkan koneksi dari satu node ke node tertentu lainnya. Dalam Graph berarah, jika node A terhubung ke node B, belum tentu node B terhubung kembali ke node A.[2]
+    2. Graph Tidak Berarah (Undirected Graph) : Merupakan Graph di mana setiap node memiliki edge yang menghubungkannya ke node lain tanpa arah. Artinya, jika node A terhubung dengan node B, secara otomatis terbentuk panah bolak-balik (keterhubungan) dari A ke B dan B ke A.[2]
+
+Dalam implementasi program, Graph dapat direpresentasikan dengan beberapa cara, dua yang paling umum adalah Matriks Ketetanggaan (Adjacency Matrices) dan Multi Linked List.[1]
+
+Dua metode dasar yang umum digunakan untuk mengunjungi node-node dalam Graph adalah:
+    - A. Breadth First Search (BFS)
+        BFS bekerja dengan mengunjungi root (kedalaman 0), kemudian semua node di kedalaman 1, lalu kedalaman 2, dan seterusnya. Kunjungan pada setiap level dimulai dari kiri ke kanan. Algoritma ini menggunakan struktur data Queue (Antrian) untuk mengelola node yang akan dikunjungi.
+
+    - B. Depth First Search (DFS)
+        DFS bekerja dengan mengunjungi root, kemudian secara rekursif bergerak sedalam mungkin ke subtree dari node tersebut. Algoritma ini menggunakan struktur data Stack (Tumpukan) untuk mengelola node yang akan dikunjungi.
 
 ### A. Materi Praktikum <br/>
 ...
@@ -619,11 +632,17 @@ int main() {
 ### Output Unguided 1 :
 
 ![Screenshot Output Unguided 1](https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-13/Laprak-modul-14/assets/output-1.png)
-Fungsi program di atas as
+Program diatas adalah program untuk membuat sebuah Graph dengan mengimlementasikan ADT. Program meminta unutk menghubungkan node A-B-C-D-E-F-G-H seperti pada gambar, dimana dalam struktur terdapat ElmNode untuk merepresentasikan node, dan ElmEdge untuk merepresentasikan edge/garis penghubung antar node.
+
+Fungsi-Fungsi yang ada pada program adalah :
+    1. CreateGraph()    => membuat graph kosong
+    2. InsertNode()     => menambahkan dan menyisipkan node baru
+    3. ConnectNode()    => untuk menghubungkan antar simpul dengan node
+    4. PrintInfoGraph() => untuk mencetak/menampilkan graph
 
 ### 2. soal unguided 2
-Carilah elemen dengan nomor polisi D001 dengan membuat fungsi baru.
-fungsi findElm( L : List, x : infotype ) : address
+Buatlah prosedur untuk menampilkanhasil penelusuran DFS.
+prosedur PrintDFS (Graph G, adrNode N);
 
 ### Jawaban
 graph.h
@@ -815,14 +834,19 @@ int main() {
 ```
 ### Output Unguided 2:
 ![Screenshot Output Unguided 2](https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-13/Laprak-modul-14/assets/output-2.png)
-Melanjutkan kode pada Unguided 1,
-Fungsi program di atas
+Program diatas adalah program yang melanjutkan unguided 1  untuk membuat sebuah Graph dengan mengimlementasikan ADT. Program meminta unutk menghubungkan node A-B-C-D-E-F-G-H seperti pada gambar, dimana dalam struktur terdapat ElmNode untuk merepresentasikan node, dan ElmEdge untuk merepresentasikan edge/garis penghubung antar node. Di mana program ini menambah sebuah fungsi unutuk mengimplementasikan Depth First Search (DFS)
+
+Fungsi-Fungsi yang ada pada program adalah :
+    1. CreateGraph()    => membuat graph kosong
+    2. InsertNode()     => menambahkan dan menyisipkan node baru
+    3. ConnectNode()    => untuk menghubungkan antar simpul dengan node
+    4. PrintInfoGraph() => untuk mencetak/menampilkan graph
+Dengan penambahan 
+    5. PrintDFS()       => untuk mengimplementasikan dan mengeprint algoritma DFS dari node A
 
 ### 3. soal unguided 3
-Hapus elemen dengan nomor polisi D003 dengan procedure delete.
-    - procedure deleteFirst( input/output L : List, P : address )
-    - procedure deleteLast( input/output L : List, P : address )
-    - procedure deleteAfter( input Prec : address, input/output P : address )
+Buatlah prosedur untuk menampilkanhasil penelusuran DFS.
+prosedur PrintBFS (Graph G, adrNode N);
 
 ### Jawaban
 graph.h
@@ -1045,15 +1069,27 @@ int main() {
 ```
 ### Output Unguided 3:
 ![Screenshot Output Unguided 3](https://raw.githubusercontent.com/GilarSaputra/103112400253_Gilar-Saputra/main/Pertemuan-13/Laprak-modul-14/assets/output-3.png)
-Melanjutkan kode unguided 1 dan 2
-Fungsi program di atas 
+Program diatas adalah program yang melanjutkan unguided 1 dan 2 untuk membuat sebuah Graph dengan mengimlementasikan ADT. Program meminta unutk menghubungkan node A-B-C-D-E-F-G-H seperti pada gambar, dimana dalam struktur terdapat ElmNode untuk merepresentasikan node, dan ElmEdge untuk merepresentasikan edge/garis penghubung antar node. Di mana program ini menambah sebuah fungsi untuk mengimplementasikan Breadth First Search (BFS)
+
+Fungsi-Fungsi yang ada pada program adalah :
+    1. CreateGraph()    => membuat graph kosong
+    2. InsertNode()     => menambahkan dan menyisipkan node baru
+    3. ConnectNode()    => untuk menghubungkan antar simpul dengan node
+    4. PrintInfoGraph() => untuk mencetak/menampilkan graph
+    5. PrintDFS()       => untuk mengimplementasikan dan mengeprint algoritma DFS pada node A
+Dengan penambahan 
+    6. PrintBFS()       => untuk mengimplementasikan dan mengeprint algoritma BFS pada node A
 
 ## Kesimpulan
+Graph adalah struktur data non-linear yang terdiri dari himpunan simpul (node atau vertec) dan sisi (edge) yang merepresentasikan relasi. Dalam praktikum ini, Graph berhasil diimplementasikan secara dinamis menggunakan Multi Linked List (Multilist) dan pointer. Representasi ini menggunakan struktur ganda (ElmNode untuk simpul dan ElmEdge untuk sisi) yang memungkinkan penambahan dan penghapusan simpul serta sisi yang fleksibel.[1]
 
+Algoritma Penelusuran (Traversal):Dua metode fundamental untuk menelusuri Graph telah berhasil diimplementasikan:
+    - Breadth First Search (BFS) diimplementasikan dengan memanfaatkan struktur data Queue (Antrian). BFS menelusuri Graph      secara horizontal (berdasarkan level kedalaman), menjamin bahwa semua simpul di kedalaman telah dikunjungi.
+    - Depth First Search (DFS) diimplementasikan dengan memanfaatkan struktur data Stack (Tumpukan). DFS menelusuri Graph secara vertikal (mendalam), mengikuti satu cabang sejauh mungkin sebelum melakukan backtracking untuk menelusuri cabang lainnya.
 
 ## Referensi
-[1] Wijoyo, A., Prasetiyo, A. R., Salsabila, A. A., Nife, K., Murni, & Nadapdap, P. B. (2024). Evaluasi Efisiensi Struktur Data Linked List pada Implementasi Sistem Antrian. JRIIN : Jurnal Riset Informatika Dan Inovasi, 1(12), 1244-1246. Diakses dari https://jurnalmahasiswa.com/index.php/jriin/article/view/1060 <br/>
-[2] Wijoyo, A., Prayudi, L. A., Fiqih, M., Santoso, R. D., Putra, R. T. S., Arifin, T., & Farhan, A. (2024). Penggunaan Algoritma Doubly Linked List Untuk Insertion Dan Deletion. JRIIN: Jurnal Riset Informatika dan Inovasi, 1(12), 1329-1331.<br/>
-[3]Wisesty, U. N., Nurrahmi, H., Yunanto, P. E., Rismala, R., & Sthevanie, F. (2025). STRUKTUR DATA MENGGUNAKAN C++. PENERBIT KBM INDONESIA.
+[1] Ratmaja, M. F. H. (2012). Aplikasi Simulasi Pembelajaran Struktur Data Graph (Doctoral dissertation, Universitas Mercu Buana).<br/>
+[2] Ginting, S. H. N., Effendi, H., Kumar, S., Marsisno, W., Sitanggang, Y. R. U., Anwar, K., ... & Smrti, N. N. E. (2024). Pengantar struktur data. Penerbit Mifandi Mandiri Digital, 1(01). yang diakses pada https://jurnal.mifandimandiri.com/index.php/penerbitmmd/article/view/39 <br/>
+
 
 
